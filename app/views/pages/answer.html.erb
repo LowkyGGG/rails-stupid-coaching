@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Answer</h1>
+  <div class="your-answer">
+    <h3><%= "#{@answer}" %></h3>
+    <h5><i>- You</i></h5>
+  </div>
+
+  <div class="coach-answer">
+    <% if @answer == "I am going to work" %>
+      <h3>Great!</h3>
+    <h5><i>- Coach</i></h5>
+  <% elsif @answer.include?("?") %>
+    <h3>Silly question, get dressed and go to work!</h3>
+    <h5><i>- Coach</i></h5>
+  <% else %>
+    <h3>I don't care, get dressed and go to work!</h3>
+    <h5><i>- Coach</i></h5>
+  <% end %>
+  </div>
+  <%= link_to 'Ask a new question', ask_path, class: 'btn btn-primary' %>
+</div>
